@@ -18,4 +18,10 @@ public class BirdieTest {
                 .doesNotThrowAnyException();
     }
 
+    @Test
+    @DisplayName("정수만 입력")
+    public void checkInteger() {
+        assertThatCode(() -> validator.checkInteger("123"))
+                .doesNotThrowAnyException();
+    }
 }
