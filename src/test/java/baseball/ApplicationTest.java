@@ -1,5 +1,7 @@
 package baseball;
 
+import baseball.Model.Generator;
+import baseball.Model.GeneratorNumber;
 import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +28,12 @@ class ApplicationTest extends NsTest {
                 assertThatThrownBy(() -> runException("1234"))
                         .isInstanceOf(IllegalArgumentException.class)
         );
+    }
+
+    @Test
+    void isValidPickNumbers() {
+        Generator generator = new GeneratorNumber();
+        generator.generate();
     }
 
     @Override
