@@ -24,4 +24,19 @@ public class BirdieTest {
         assertThatCode(() -> validator.checkInteger("123"))
                 .doesNotThrowAnyException();
     }
+
+    @Test
+    @DisplayName("1과 2만 입력")
+    public void checkOne() {
+        assertThatCode(() -> validator.checkOneTwo(1))
+                .doesNotThrowAnyException();
+    }
+    @Test
+    @DisplayName("1과 2만 입력")
+    public void checkTwo() {
+        assertThatCode(() -> validator.checkOneTwo(2))
+                .doesNotThrowAnyException();
+    }
+
+
 }
