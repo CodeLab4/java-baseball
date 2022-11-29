@@ -29,10 +29,10 @@
 ### 클래스 설계
 - MVC 패턴 적용
 - [ ] Controller
-  - [ ] baseballController : 게임 전반을 관리하는 컨트롤러
+  - [ ] baseballController : 게임 전반을 관리하는 컨트롤러 클래스
 - [ ] Model
   - [ ] Generator Interface
-    - [ ] GeneratorNumber
-  - [ ] 
+    - [ ] GeneratorNumber : 숫자릃 생성하는 클래스
+  - [ ] Comparison : 생성된 숫자와 입력받은 숫자를 비교하는 클래스
 - [ ] View
-  - [ ] Output
+  - [ ] Output : 출력 기능 클래스
