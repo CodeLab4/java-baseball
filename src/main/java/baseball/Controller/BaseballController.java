@@ -1,13 +1,18 @@
 package baseball.Controller;
 
 import baseball.Model.Generator;
-import baseball.Model.GeneratorNumber;
+import java.util.List;
 
 public class BaseballController {
-    private final Generator generator = new GeneratorNumber();
+    private final Generator generator;
 
-    public void a() {
-        generator.generate();
+    public BaseballController(Generator generator) {
+        this.generator = generator;
+    }
+
+    public void game() {
+        List<Integer> list = generator.generate();
+
     }
 
 

@@ -7,7 +7,7 @@ import java.util.List;
 public class GeneratorNumber implements Generator {
 
     @Override
-    public void generate() {
+    public List<Integer> generate() {
         List<Integer> pickNumbers = new ArrayList<>();
         while (pickNumbers.size() < 3) {
             int check = Randoms.pickNumberInRange(START_INDEX, END_INDEX);
@@ -15,5 +15,7 @@ public class GeneratorNumber implements Generator {
                 pickNumbers.add(check);
             }
         }
+        return pickNumbers;
     }
+
 }
