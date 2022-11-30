@@ -18,4 +18,13 @@ public class GeneratorNumber implements Generator {
         return pickNumbers;
     }
 
+    public static List<Integer> generateList(String input) {
+        List<Integer> userList = new ArrayList<>();
+        String[] array = input.split("");
+        for (int i = 0; i < array.length; i++) {
+            userList.add(Integer.parseInt(array[i]));
+        }
+        return userList;
+    }
+
 }
