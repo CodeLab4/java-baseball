@@ -1,10 +1,13 @@
 package baseball.model;
 
+import baseball.validator.Validator;
 import java.util.List;
 
 public class CompareBaseball {
 
     final int INPUT_LENGTH = 3;
+
+    Validator validator = new Validator();
 
     // 스트라이크 카운트 체크
     public int checkStrike(List<Integer> computerNumber, List<Integer> userNumber, int strikeCount) {
@@ -13,20 +16,19 @@ public class CompareBaseball {
                 strikeCount++;
             }
         }
+        validator.checkStrikeCountRange(strikeCount);
         return strikeCount;
     }
 
     //볼카운트 체크
     public int checkBall(List<Integer> computerNumber, List<Integer> userNumber, int ballCount) {
-        if (computerNumber.get(0).equals(userNumber.get(1)) || computerNumber.get(0).equals(userNumber.get(2))) {
-            ballCount++;
+        for (int i = 0; i < computerNumber.size(); i++) {
+            if(computerNumber.get(i) == userNumber.get(i)){
+                ballCount--;
+            }
         }
-        if (computerNumber.get(1).equals(userNumber.get(0)) || computerNumber.get(1).equals(userNumber.get(2))) {
-            ballCount++;
-        }
-        if (computerNumber.get(2).equals(userNumber.get(0)) || computerNumber.get(2).equals(userNumber.get(1))) {
-            ballCount++;
-        }
+        userNumber.retainAll(computerNumber);
+        ballCount += userNumber.size();
         return ballCount;
     }
 

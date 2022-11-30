@@ -14,10 +14,17 @@ public class BaseBallController {
     private int gamePlay = 0;
     List<Integer> computerNumber = new ArrayList<>();
 
-    NumberGenerator numberGenerator = new NumberGenerator();
-    OutputView outputView = new OutputView();
-    InputView inputView = new InputView();
-    CompareBaseball compareBaseball = new CompareBaseball();
+    NumberGenerator numberGenerator;
+    OutputView outputView;
+    InputView inputView;
+    CompareBaseball compareBaseball;
+
+    public BaseBallController(NumberGenerator numberGenerator, OutputView outputView, InputView inputView, CompareBaseball compareBaseball) {
+        this.numberGenerator = numberGenerator;
+        this.outputView = outputView;
+        this.inputView = inputView;
+        this.compareBaseball = compareBaseball;
+    }
 
     public void gameStart() {
         outputView.startGame();

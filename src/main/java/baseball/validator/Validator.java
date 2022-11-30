@@ -27,9 +27,20 @@ public class Validator {
 
     public void checkOneTwo(int gamePlay) {
         if (gamePlay != 1 && gamePlay != 2) {
-            System.out.println(BaseballConstant.Error.getValue() + BaseballConstant.OnlyOneTwo.getValue());
+//            System.out.println(BaseballConstant.Error.getValue() + BaseballConstant.OnlyOneTwo.getValue());
             throw new IllegalArgumentException(
                     BaseballConstant.Error.getValue() + BaseballConstant.OnlyOneTwo.getValue());
+        }
+    }
+
+    public void checkStrikeCountRange(int strikeCount) {
+        if(strikeCount > 3 || strikeCount < 0){
+            throw new IllegalArgumentException(BaseballConstant.Error.getValue() + BaseballConstant.RangeError.getValue());
+        }
+    }
+    public void checkBallCountRange(int ballCount) {
+        if(ballCount > 3 || ballCount < 0){
+            throw new IllegalArgumentException(BaseballConstant.Error.getValue() + BaseballConstant.RangeError.getValue());
         }
     }
 
