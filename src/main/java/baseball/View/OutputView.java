@@ -13,6 +13,7 @@ public class OutputView {
         }
         if(compareResult.get(FIRST_IDX) > 0 && compareResult.get(SECOND_IDX) > 0) {
             System.out.println(compareResult.get(FIRST_IDX) + "볼 " + compareResult.get(SECOND_IDX) + "스트라이크");
+            return;
         }
         if(compareResult.get(FIRST_IDX) == 0 && compareResult.get(SECOND_IDX) > 0) {
             System.out.println(compareResult.get(SECOND_IDX) + "볼");
